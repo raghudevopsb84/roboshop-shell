@@ -1,6 +1,5 @@
 pwd=$(pwd)
 
-
 systemd_setup() {
   cp ${pwd}/${component_name}.service /etc/systemd/system/${component_name}.service
   systemctl daemon-reload
@@ -30,4 +29,11 @@ python() {
   dnf install python3 gcc python3-devel -y
   app_pre_setup
   pip3 install -r requirements.txt
+}
+
+java() {
+  dbf install maven -y
+  app_pre_setup
+  mvn clean package
+  mv target/${component_name}-1.0.jar ${component_name}.jar
 }
