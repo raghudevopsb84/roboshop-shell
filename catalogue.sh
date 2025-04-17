@@ -1,6 +1,6 @@
 component_name=catalogue
 source common.sh
-pwd=$(pwd)
+
 nodejs
 
 cp ${pwd}/mongo.repo /etc/yum.repos.d/mongo.repo

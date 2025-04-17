@@ -21,3 +21,5 @@ nodejs() {
   npm install
 }
 
+pwd=$(pwd)
+
