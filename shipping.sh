@@ -1,3 +1,5 @@
+set -e
+
 if [ -z "$1" ]; then
   echo Input DB Password is missing
   exit
