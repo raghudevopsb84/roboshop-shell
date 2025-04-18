@@ -31,7 +31,7 @@ python() {
 }
 
 java() {
-  dfn install maven -y
+  dnf install maven -y
   app_pre_setup
   mvn clean package
   mv target/${component_name}-1.0.jar ${component_name}.jar
