@@ -12,7 +12,6 @@ app_pre_setup() {
   rm -rf /app
   mkdir /app
   cd /app
-  npm install
   curl -L -o /tmp/${component_name}.zip https://roboshop-artifacts.s3.amazonaws.com/${component_name}-v3.zip
   unzip /tmp/${component_name}.zip
 }
@@ -32,7 +31,7 @@ python() {
 }
 
 java() {
-  dbf install maven -y
+  dnf install maven -y
   app_pre_setup
   mvn clean package
   mv target/${component_name}-1.0.jar ${component_name}.jar
